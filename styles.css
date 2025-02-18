@@ -1,13 +1,29 @@
-body { 
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Jua&display=swap');
+
+* { /* 폰트 글꼴 */
+    font-family: "Jua", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: rgb(214, 172, 172) !important;
     font-family: Arial, sans-serif; 
     margin: 20px;
  }
+
+ /* 팀 이름 */
 .title {
-    height: 200px;
+    height: 300px;
     justify-content: center;
     align-items: center;
     display: flex;
-    background-color: green;
+    background-image: url('./img/Header.jpg');
+    background-size: cover;
+    color: #c4f002;
+    border: 2px double rgb(122, 12, 12);
+    box-shadow: 0 0 100px rgb(245, 243, 243);
+    border-radius: 3%;
 }
 
 /* 팀 목표 리스트 */
@@ -31,6 +47,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin-left: 100px;
+
     gap: 20px;
     display: none;
     background-color: blue;
@@ -41,11 +59,12 @@ body {
     display: flex;
     gap: 40px;
     transition: all 0.3s ease-in-out;
-    background-color: white;
+    background-color: darkred;
     justify-content: center;
     align-items: center;
 }
 
+/* 썸네일 */ 
 .thumbnail {
     width: 200px;
     height: 200px;
@@ -53,39 +72,38 @@ body {
     cursor: pointer;
     object-fit: cover;
     border: 2px solid darkgrey;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, border-color 0.2s ease-out; 
     box-shadow: 0 14px 26px rgba(0,0,0,0.3);
     border-radius: 10px;
-    
 }
 
+/* 썸네일에 마우스를 갖다 댈 때 액션 */
 .thumbnail:hover {
-    transform: translateY(-5px) scale(1.005) translateZ(0);
+    transform: translateY(-5px) scale(1.05) translateZ(0);
+    border-color: #0952b1;
 }
 
 
 /* 상세 내용 컨테이너 */
 .detail-container {
-    width: 400px;
-    min-height: 200px;
+    width: 600px;
+    min-height: 400px;
     padding: 10px;
     border: 1px solid #ddd;
-    display: none;
+    margin: auto 10px auto 20px;
+    background-color: darkkhaki;
+    
 }
 
 /* 세로 정렬될 썸네일들 */
 .vertical-thumbnails {
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
 /*팀 소개 말*/
 .intro {
+    text-align: center;
     background-color: violet;
-}
-
-/*팀 소개 이미지*/
-.TeamImage {
-    background-color: bisque;
 }
