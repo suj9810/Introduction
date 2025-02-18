@@ -59,7 +59,6 @@ body {
     display: flex;
     gap: 40px;
     transition: all 0.3s ease-in-out;
-    background-color: darkred;
     justify-content: center;
     align-items: center;
 }
@@ -103,7 +102,20 @@ body {
 }
 
 /*팀 소개 말*/
+
+@keyframes colorChange { /* 상시로 글씨 색이 바뀌어요 */
+    0% { color: rgb(255, 255, 255); }
+    25% { color: rgb(255, 239, 94); }
+    50% { color: rgb(55, 148, 235); }
+    75% { color: rgb(196, 153, 98); }
+    100% { color: rgb(255, 255, 255); }
+  }
+  
 .intro {
+    margin: auto auto;
     text-align: center;
-    background-color: violet;
+    font-size: 24px;
+    font-weight: bold;
+    animation: colorChange 5s infinite; /* 5초 동안 반복 */
 }
+
