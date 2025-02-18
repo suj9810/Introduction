@@ -27,8 +27,6 @@
             display: flex;
             align-items: center;
         }
-
-        
     </style>
 </head>
 
@@ -54,20 +52,35 @@
 
 
     <main>
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            <div class="col">
-                <img src="IntroductDetail/img/신은주.png" class="card-img-top" style="width: 300px; height: 350px;">
-            </div>
-            <div class="col">
-                <img src="IntroductDetail/img/조혁준.JPG" class="card-img-top" style="width: 300px; height: 350px;">
-            </div>
-            <div class="col">
-                <img src="IntroductDetail/img/임욱호.jpg" class="card-img-top" style="width: 300px; height: 350px;">
-            </div>
-            <div class="col">
-                <img src="IntroductDetail/img/정성욱.jpeg" class="card-img-top" style="width: 300px; height: 350px;">
+        <div id="thumbnail-container" class="thumbnail-container">
+            <div class="row row-cols-1 row-cols-md-4 g-4">
+                <div class="col">
+                    <img src="IntroductDetail/img/신은주.png" class="card-img-top" style="width: 300px; height: 350px;"
+                        data-detail="detail.html">
+                </div>
+                <div class="col">
+                    <img src="IntroductDetail/img/임욱호.JPG" class="card-img-top" style="width: 300px; height: 350px;"
+                        data-detail="detail.html">
+                </div>
+                <div class="col">
+                    <img src="IntroductDetail/img/정성욱.jpeg" class="card-img-top" style="width: 300px; height: 350px;"
+                        data-detail="detail.html">
+                </div>
+                <div class="col">
+                    <img src="IntroductDetail/img/조혁준.JPG" class="card-img-top" style="width: 300px; height: 350px;"
+                        data-detail="detail.html">
+                </div>
             </div>
         </div>
+        <!-- 상세 정보 + 썸네일 정렬 영역 -->
+        <div class="container">
+            <!-- 상세 정보 영역 -->
+            <div id="detail-container" class="detail-container"></div>
+
+            <!-- 세로 정렬될 썸네일들 -->
+            <div id="vertical-thumbnails" class="vertical-thumbnails"></div>
+        </div>
+
         <div class="goals">
             <h3>
                 팀 목표
