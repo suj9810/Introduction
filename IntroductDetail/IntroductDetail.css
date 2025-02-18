@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+}
+.box {
+    margin: 5px;
+}
+#testimg{
+    width: 200px;
+    height: 250px;
+}
+#testimg1{
+    width: 200px;
+    height: 250px;
+}
