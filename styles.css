@@ -1,3 +1,22 @@
+.title {
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.list {
+    margin-inline-start: 8px;
+    margin-right: auto;
+}
+
+.goals {
+    margin-left: 20px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
 body { font-family: Arial, sans-serif; margin: 20px; }
 
 /* 메인 컨테이너 */
