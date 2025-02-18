@@ -1,4 +1,7 @@
-body { font-family: Arial, sans-serif; margin: 20px; }
+body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px;
+ }
 
 /* 메인 컨테이너 */
 .container {
@@ -7,22 +10,30 @@ body { font-family: Arial, sans-serif; margin: 20px; }
     align-items: flex-start;
     gap: 20px;
     display: none;
+    background-color: blue;
 }
 
 /* 썸네일 리스트 (초기에는 가로 정렬) */
 .thumbnail-container {
     display: flex;
-    gap: 10px;
+    gap: 40px;
     transition: all 0.3s ease-in-out;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
 }
 
 .thumbnail {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
+    margin: 40px;
     cursor: pointer;
     object-fit: cover;
-    border: 2px solid transparent;
+    border: 2px solid darkolivegreen;
     transition: transform 0.3s ease-in-out;
+    box-shadow: 0 14px 26px rgba(0,0,0,1);
+    border-radius: 10px;
+    
 }
 
 .thumbnail:hover {
