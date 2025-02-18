@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>썸네일 클릭 상세 보기</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+
+        /* 메인 컨테이너 */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+            display: none;
+        }
+
+        /* 썸네일 리스트 (초기에는 가로 정렬) */
+        .thumbnail-container {
+            display: flex;
+            gap: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            object-fit: cover;
+            border: 2px solid transparent;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .thumbnail:hover {
+            border-color: #007bff;
+        }
+
+        /* 상세 내용 컨테이너 */
+        .detail-container {
+            width: 400px;
+            min-height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            display: none;
+        }
+
+        /* 세로 정렬될 썸네일들 */
+        .vertical-thumbnails {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>썸네일을 클릭하면 해당 상세 정보가 왼쪽에 표시됩니다.</h2>
+
+<!-- 썸네일 리스트 (초기 상태) -->
+<div id="thumbnail-container" class="thumbnail-container">
+    <img class="thumbnail" src="thumb1.jpg" data-detail="detail1.html">
+    <img class="thumbnail" src="thumb2.jpg" data-detail="detail2.html">
+    <img class="thumbnail" src="thumb3.jpg" data-detail="detail3.html">
+    <img class="thumbnail" src="thumb4.jpg" data-detail="detail4.html">
+</div>
+
+<!-- 상세 정보 + 썸네일 정렬 영역 -->
+<div class="container">
+    <!-- 상세 정보 영역 -->
+    <div id="detail-container" class="detail-container"></div>
+
+    <!-- 세로 정렬될 썸네일들 -->
+    <div id="vertical-thumbnails" class="vertical-thumbnails"></div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
