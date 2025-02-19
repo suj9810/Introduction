@@ -130,4 +130,8 @@ body {
     font-weight: bold;
     animation: colorChange 5s infinite; /* 5초 동안 반복 */
 }
+footer{
+    background-color: white;
+    height: 200px;
+}
 
