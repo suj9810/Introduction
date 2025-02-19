@@ -5,9 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>소개 상세 페이지</title>
     <link rel="stylesheet" type="text/css" href="IntroductDetail.css">  <!-- css 외부 연결-->
-    <script src="../script.js"></script> <!-- javascript 외부 연결-->
+    <script src="IntroductDetail.js"></script> <!-- javascript 외부 연결-->
 </head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<body>
+<!--db 데이터 표기 부분-->
+<div class="myContent"></div>
+<!--db연결 부분-->
+<script type="module">
+    // 모듈 불러오기
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import {getFirestore} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import {collection, addDoc} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+    import {getDocs} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
+    // Firebase 설정
+    const firebaseConfig = {
+        apiKey: "AIzaSyD2HNqOwPMK5OmK6GSavTT3s7DTdyChE88",
+        authDomain: "introductdetail-f351f.firebaseapp.com",
+        projectId: "introductdetail-f351f",
+        storageBucket: "introductdetail-f351f.firebasestorage.app",
+        messagingSenderId: "600863448642",
+        appId: "1:600863448642:web:685b113cbc73eac76917db"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    // Firestore에서 데이터 가져오기
+    let docs = await getDocs(collection(db, "detail"));
+    docs.forEach((doc) => {
+        let userData = doc.data();
+
+        let tb_idx = userData['tb_idx'];                //번호
+        let tb_name = userData['tb_name'];              //이름
+        let tb_age = userData['tb_age'];                //나이
+        let tb_content = userData['tb_content'];        //내용
+
+        let userTemplate = `
+          <div class="docs">
+
+            <h5>${userData.tb_idx}</h5>
+            <p>${userData.tb_name}</p>
+            <h5>${userData.tb_age}</h5>
+            <p>${userData.tb_content}</p>
+          </div>`;
+        document.querySelector('.myContent').insertAdjacentHTML('beforeend', userTemplate);
+    })
+
+        .catch((error) => {
+            console.error("Error fetching data: ", error);
+        });
+
+
+    // console.log(tb_idx);
+    // console.log(tb_name);
+    // console.log(tb_age);
+    // console.log(tb_content);
+</script>
+
+</body>
 </html>
