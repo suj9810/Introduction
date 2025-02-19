@@ -6,7 +6,8 @@
 body {
     margin: 0 auto !important;
     background-color: rgb(255, 255, 255) !important;
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
+    position: relative;
 }
 
 body::before {
@@ -21,7 +22,7 @@ body::before {
 
 h3 {
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-weight: 600 !important;
     color: black;
 
@@ -35,6 +36,7 @@ h3 {
     display: flex;
     flex-direction: column;
     color: #252525;
+    position: relative;
 }
 
 .title::before {
@@ -55,7 +57,7 @@ h3 {
     width: 60px;
     height: 2px;
     content: '';
-    margin: auto auto 200px auto;
+    margin: 40px auto 200px auto;
     background: #000000;
     box-shadow:  2px 2px 1px rgb(255, 255, 255);
 
@@ -64,7 +66,7 @@ h3 {
 
 /* 팀 이름 폰트 */
 .titleFont {
-    margin: 30px 30px 100px 30px;
+    margin: 100px 30px 100px 30px;
     font-family: "Nanum Brush Script", serif;
     font-weight: 400;
     font-style: normal;
@@ -89,16 +91,17 @@ h3 {
 /* 목표, 규칙 박스 */
 .goalruleBox {
     height: 50px;
-    margin: 300px auto auto auto;
+    margin: 300px auto auto 180px;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 220px;
+    gap: 10px;
     font-family: "Gowun Dodum", serif;
     font-weight: 700;
     font-style: normal;
     line-height: 50px;
     color: rgb(0, 0, 0);
+    position: relative;
 }
 .goalruleBox::before {
     content: "";
@@ -125,6 +128,20 @@ h3 {
     width: 700px;
 }
 
+/* 멤버 소개 박스 */
+.teamintro {
+    text-align: center;
+    margin-top: 520px;
+}
+.teaminfont1 {
+    font-size:  41px;
+    font-weight: 600;
+}
+.teaminfont2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
 /* 메인 컨테이너 */
 .container {
     display: flex;
@@ -138,6 +155,7 @@ h3 {
 
 /* 썸네일 리스트 (초기에는 가로 정렬) */
 .thumbnail-container {
+    margin-top: 150px;
     height: 300px;
     display: flex;
     gap: 40px;
@@ -150,7 +168,7 @@ h3 {
 .thumbnail {
     width: 200px;
     height: 200px;
-    margin: 150px 50px auto 50px;
+    margin: auto 50px auto 50px;
     cursor: pointer;
     object-fit: cover;
     border: 3px solid #858080;
