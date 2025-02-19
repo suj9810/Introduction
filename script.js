@@ -19,6 +19,30 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(html => {
                 detailContainer.innerHTML = html;
                 detailContainer.style.display = "block";
+
+                // 삽입된 HTML 내의 모든 <script> 태그 실행
+                const scripts = detailContainer.querySelectorAll("script");
+                scripts.forEach(script => {
+                    const newScript = document.createElement("script");
+
+                    // 'import' 구문이 있을 경우 해당 모듈을 동적으로 로드
+                    if (script.textContent.includes('import')) {
+                        const moduleUrl = 'https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js'; // 예시로 Firebase URL 지정
+                        import(moduleUrl)
+                            .then(module => {
+                                console.log("Module loaded:", module); // Firebase 모듈이 성공적으로 로드됨
+                                // Firebase 관련 초기화 코드 추가
+                                // const app = initializeApp(firebaseConfig); // 여기에 Firebase 설정 추가
+                            })
+                            .catch(error => {
+                                console.error("Error loading module:", error);
+                            });
+                    } else {
+                        // import 구문이 없는 일반 script 처리
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    }
+                });
             })
             .catch(error => console.error("불러오기 실패:", error));
 
