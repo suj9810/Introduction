@@ -40,6 +40,7 @@
     // URL에서 ID 가져오기
     const urlParams = new URLSearchParams(window.location.search);
     const tb_idx = urlParams.get("id");
+    console.log("tb_idx:", tb_idx);  // 로그로 확인
     document.getElementById("idx").textContent = urlParams.get("id");
 
     async function fetchData() {
