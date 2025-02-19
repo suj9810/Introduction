@@ -53,10 +53,11 @@ h3 {
 .title::after {
     position: absolute;
     width: 60px;
-    height: 3px;
+    height: 2px;
     content: '';
     margin: auto auto 200px auto;
-    background: #000;
+    background: #000000;
+    box-shadow:  2px 2px 1px rgb(255, 255, 255);
 
 }
 
@@ -69,6 +70,7 @@ h3 {
     font-style: normal;
     font-size: 70px;
     color: white;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, .35);
 }
 
 .introfont {
@@ -78,6 +80,7 @@ h3 {
     font-size: 30px;
     margin: 30px 110px 200px 110px;
     color: white;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, .35);
 }
 
 /*팀 소개*/
@@ -193,6 +196,6 @@ h3 {
 }
 
 footer {
-    background-color: white;
+    background-color: #c9c8c8;
     height: 200px;
 }
