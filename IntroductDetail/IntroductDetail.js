@@ -1,6 +1,6 @@
 // 모듈 불러오기
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getFirestore, doc, getDoc, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 // Firebase 설정
 const firebaseConfig = {
@@ -61,13 +61,27 @@ async function saveComment() {
     try {
         await addDoc(collection(db, "detail", tb_idx, "comments"), {
             text: commentInput,
-            timestamp: new Date()
+            timestamp: serverTimestamp() // Firestore 서버 시간을 사용
         });
 
         document.getElementById("commentInput").value = ""; // 입력창 초기화
     } catch (error) {
         console.error("댓글 저장 중 오류 발생:", error);
     }
+}
+
+// 날짜 포맷팅 함수 (YYYY-MM-DD HH:MM)
+function formatTimestamp(timestamp) {
+    if (!timestamp) return "시간 없음";
+
+    const date = timestamp.toDate();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+
+    return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
 // 댓글 불러오기 (실시간 업데이트)
@@ -82,7 +96,11 @@ function fetchComments() {
         snapshot.forEach((doc) => {
             const commentData = doc.data();
             const li = document.createElement("li");
-            li.textContent = commentData.text;
+
+            // 날짜 변환
+            const formattedTime = commentData.timestamp ? formatTimestamp(commentData.timestamp) : "시간 없음";
+
+            li.innerHTML = `<strong>${formattedTime}</strong> - ${commentData.text}`;
             commentList.appendChild(li);
         });
     });
