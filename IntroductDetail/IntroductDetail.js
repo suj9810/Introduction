@@ -1,6 +1,6 @@
 // 모듈 불러오기
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getFirestore, doc, getDoc, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp, deleteDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 // Firebase 설정
 const firebaseConfig = {
@@ -61,12 +61,25 @@ async function saveComment() {
     try {
         await addDoc(collection(db, "detail", tb_idx, "comments"), {
             text: commentInput,
-            timestamp: serverTimestamp() // Firestore 서버 시간을 사용
+            timestamp: serverTimestamp()
         });
 
         document.getElementById("commentInput").value = ""; // 입력창 초기화
     } catch (error) {
         console.error("댓글 저장 중 오류 발생:", error);
+    }
+}
+
+// 댓글 삭제하기
+async function deleteComment(commentId) {
+    const confirmDelete = confirm("정말로 이 댓글을 삭제하시겠습니까?");
+    if (!confirmDelete) return;
+
+    try {
+        await deleteDoc(doc(db, "detail", tb_idx, "comments", commentId));
+        console.log("댓글 삭제 완료:", commentId);
+    } catch (error) {
+        console.error("댓글 삭제 중 오류 발생:", error);
     }
 }
 
@@ -96,11 +109,16 @@ function fetchComments() {
         snapshot.forEach((doc) => {
             const commentData = doc.data();
             const li = document.createElement("li");
-
-            // 날짜 변환
             const formattedTime = commentData.timestamp ? formatTimestamp(commentData.timestamp) : "시간 없음";
 
-            li.innerHTML = `<strong>${formattedTime}</strong> - ${commentData.text}`;
+            // 삭제 버튼 생성
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "삭제";
+            deleteButton.onclick = () => deleteComment(doc.id);
+
+            // 댓글 내용 표시
+            li.innerHTML = `<strong>${formattedTime}</strong> - ${commentData.text} `;
+            li.appendChild(deleteButton);
             commentList.appendChild(li);
         });
     });
