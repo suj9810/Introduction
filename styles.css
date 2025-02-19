@@ -1,29 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Jua&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Jua&family=Nanum+Brush+Script&display=swap');
 * { /* 폰트 글꼴 */
-    font-family: "Jua", serif;
+    font-family: "Nanum Brush Script", serif;
     font-weight: 400;
     font-style: normal;
 }
 
 body {
-    background-color: rgb(214, 172, 172) !important;
+    margin: 0 auto !important;
+    background-color: rgb(255, 255, 255) !important;
     font-family: Arial, sans-serif; 
-    margin: 20px;
  }
 
  /* 팀 이름 */
 .title {
-    height: 300px;
+    height: 500px;
     justify-content: center;
     align-items: center;
     display: flex;
-    background-image: url('./img/Header.jpg');
-    background-size: cover;
-    color: #c4f002;
-    border: 2px double rgb(122, 12, 12);
-    box-shadow: 0 0 100px rgb(245, 243, 243);
-    border-radius: 3%;
+    font-size: 80px;
+    background-image: url('./img/Header.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #000000;
+}
+
+
+/* 팀 이름 폰트 */
+@keyframes titleshine {
+    50% { text-shadow: 3px 3px 6px rgb(255, 255, 255);}
+    100% { text-shadow: 0 0 0 transparent;}
+}
+.titleFont {
+    margin : 50px auto auto 600px;
+ /* text-shadow: 2px 2px 5px rgb(255, 255, 255); */
+    animation: titleshine 5s ease-in-out infinite;
 }
 
 /* 팀 목표 리스트 */
@@ -71,15 +82,16 @@ body {
     cursor: pointer;
     object-fit: cover;
     border: 2px solid darkgrey;
-    transition: transform 0.3s ease-in-out, border-color 0.2s ease-out; 
-    box-shadow: 0 14px 26px rgba(0,0,0,0.3);
-    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, border-color 0.2s ease-out, box-shadow 0.3s;
+    box-shadow: 0 5px 8px rgba(0,0,0,.35);
+    border-radius: 50%;
 }
 
 /* 썸네일에 마우스를 갖다 댈 때 액션 */
 .thumbnail:hover {
     transform: translateY(-5px) scale(1.05) translateZ(0);
     border-color: #0952b1;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.3);
 }
 
 
