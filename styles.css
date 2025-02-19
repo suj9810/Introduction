@@ -1,49 +1,126 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Jua&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gothic+A1&family=Gowun+Dodum&family=Gugi&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&display=swap');
+
 
 body {
     margin: 0 auto !important;
     background-color: rgb(255, 255, 255) !important;
-    font-family: Arial, sans-serif; 
- }
+    font-family: Arial, sans-serif;
+}
 
- /* 팀 이름 */
+body::before {
+    content: "";
+    position: absolute;
+    background-color: #c9c8c8;
+    height: 2000px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+h3 {
+    width: 100%;
+    text-align: center;
+    font-weight: 600 !important;
+    color: black;
+
+}
+
+/* 팀 이름 */
 .title {
-    height: 400px;
+    height: 500px;
     justify-content: center;
     align-items: center;
     display: flex;
-    font-family: "Nanum Brush Script", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 80px;
-    /* background-image: url('./img/Header.png'); */
-    background-color: #d5faed;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    flex-direction: column;
+    color: #252525;
+}
+
+.title::before {
+    content: "";
+    position: absolute;
+    height: 600px;
+    width: 100%;
+    opacity: 0.8;
+    background-image: url('./img/Header.jpg');
     background-position: center;
-    color: #000000;
-    border-bottom: #28fcb2 double 2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -2;
+}
+
+.title::after {
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    content: '';
+    margin: auto auto 200px auto;
+    background: #000;
+
 }
 
 
 /* 팀 이름 폰트 */
-@keyframes titleshadow { /* 그림자 반짝반짝 */
-    50% { text-shadow: 3px 3px 5px rgb(97, 96, 96);}
-    100% { text-shadow: 0 0 0 transparent;}
-}
 .titleFont {
-    margin : 50px auto auto 430px;
-    animation: titleshadow 4s ease-in-out infinite;
+    margin: 30px 30px 100px 30px;
+    font-family: "Nanum Brush Script", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    color: white;
 }
 
-/* 팀 목표 리스트 */
-.list {
-    margin-inline-start: 8px;
-    margin-right: auto;
+.introfont {
+    font-family: "Nanum Brush Script", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    margin: 30px 110px 200px 110px;
+    color: white;
+}
+
+/*팀 소개*/
+
+
+/* 목표, 규칙 박스 */
+.goalruleBox {
+    height: 50px;
+    margin: 300px auto auto auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 220px;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 50px;
+    color: rgb(0, 0, 0);
+}
+.goalruleBox::before {
+    content: "";
+    position: absolute;
+    height: 400px;
+    width: 100%;
+    /* background-image: url('./img/goalruleBox.jpeg'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.45;
+    z-index: -1;
 }
 
 /*팀 목표*/
+.goal {
+    padding: 10px;
+    width: 700px;
+}
 
+/*팀 규칙*/
+.rule {
+    padding: 10px;
+    width: 700px;
+}
 
 /* 메인 컨테이너 */
 .container {
@@ -54,11 +131,11 @@ body {
 
     gap: 20px;
     display: none;
-    background-color: blue;
 }
 
 /* 썸네일 리스트 (초기에는 가로 정렬) */
 .thumbnail-container {
+    height: 300px;
     display: flex;
     gap: 40px;
     transition: all 0.3s ease-in-out;
@@ -70,24 +147,32 @@ body {
 .thumbnail {
     width: 200px;
     height: 200px;
-    margin: 40px;
+    margin: 150px 50px auto 50px;
     cursor: pointer;
     object-fit: cover;
     border: 3px solid #858080;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s;
-    box-shadow: 0 5px 8px rgba(0,0,0,.35);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .35);
     border-radius: 50%;
 }
 
 /* 썸네일에 마우스를 갖다 댈 때 액션 */
-@keyframes thumbnailBorder{ /* 테두리 반짝반짝 */
-    50% {border-color : #4d75cc}
-    100% {border-color : #858080}
+@keyframes thumbnailBorder {
+
+    /* 테두리 반짝반짝 */
+    50% {
+        border-color: #4d75cc
+    }
+
+    100% {
+        border-color: #858080
+    }
 }
+
 .thumbnail:hover {
     transform: translateY(-5px) scale(1.05) translateZ(0);
     animation: thumbnailBorder 1.5s ease-in-out infinite 0.5s;
-    box-shadow: 0 14px 26px rgba(0,0,0,0.3);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -98,8 +183,6 @@ body {
     padding: 10px;
     border: 1px solid #ddd;
     margin: auto 10px auto 20px;
-    background-color: darkkhaki;
-    
 }
 
 /* 세로 정렬될 썸네일들 */
@@ -109,25 +192,7 @@ body {
     gap: 10px;
 }
 
-/*팀 소개 말*/
-
-@keyframes colorChange { /* 상시로 글씨 색이 바뀌어요 */
-    0% { color: rgb(255, 255, 255); }
-    25% { color: rgb(255, 239, 94); }
-    50% { color: rgb(55, 148, 235); }
-    75% { color: rgb(196, 153, 98); }
-    100% { color: rgb(255, 255, 255); }
-  }
-  
-.intro {
-    margin: auto auto;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    animation: colorChange 5s infinite; /* 5초 동안 반복 */
-}
-footer{
+footer {
     background-color: white;
     height: 200px;
 }
-
