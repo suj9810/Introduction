@@ -61,6 +61,7 @@ async function fetchData() {
 
     document.getElementById("name").textContent = userData.tb_name || "이름 없음";
     document.getElementById("age").textContent = userData.tb_age || "나이 없음";
+    document.getElementById("mbti").textContent = userData.tb_mbti || "MBTI 없음";
     document.getElementById("desc").textContent = userData.tb_content || "설명 없음";
     document.getElementById("imge").src = userData.tb_imge || "사진 없음";
 
