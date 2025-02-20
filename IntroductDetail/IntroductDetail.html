@@ -11,7 +11,7 @@
 <div class="myContent">
     <img class="memberImage" id="imge" src="${tb_img}"/>
     <h1 id="name">로딩 중...</h1>
-    <p id="idx">식별번호</p>
+    <p id="idx" style="display: none"></p>
     <p id="age">나이 불러오는 중...</p>
     <p id="desc">데이터를 불러오는 중...</p>
 </div>
@@ -29,6 +29,14 @@
     <ul id="commentList">
         <!-- 동적으로 댓글이 추가될 영역 -->
     </ul>
+</div>
+
+<!-- 썸78네일 리스트 (초기 상태) -->
+<div id="thumbnail-container" class="thumbnail-container">
+    <img class="thumbnail" src="../img/신은주.png" data-detail="IntroductDetail.html?id=1">
+    <img class="thumbnail" src="../img/임욱호.jpg" data-detail="IntroductDetail.html?id=2">
+    <img class="thumbnail" src="../img/정성욱.jpeg" data-detail="IntroductDetail.html?id=3">
+    <img class="thumbnail" src="../img/조혁준.JPG" data-detail="IntroductDetail.html?id=4">
 </div>
 
 <script src="IntroductDetail.js" type="module"></script> <!-- JavaScript 연결 -->
