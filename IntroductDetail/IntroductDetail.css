@@ -160,3 +160,23 @@ footer {
     background-color: #c9c8c8;
     height: 200px;
 }
+
+/* 메인페이지 가기 링크 */
+
+.mainpagediv {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto 2px auto auto;
+    height: 42px;
+    width: 102px;
+    background-color: rgb(243, 233, 233);
+    border: 1px ridge teal;
+}
+
+.mainpage {
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+}
