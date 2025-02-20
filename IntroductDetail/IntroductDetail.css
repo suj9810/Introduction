@@ -8,6 +8,7 @@ body {
     background-color: #ffe7c8;
     width: 75%;
     margin: auto;
+    border: green 2px solid;
 }
 
 /* 소개 데이터 */
@@ -26,6 +27,9 @@ body {
 
 /* 댓글 목록 */ 
 .comments-container {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
     background-color: aqua;
     height: 300px;
     width: 1200px;
@@ -35,5 +39,13 @@ body {
 .comment-div {
     width: 590px;
     height: 40px;
+}
+
+/* 팀원 사진이 나오는 곳 */
+.memberImage {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
