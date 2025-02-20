@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Jua&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gothic+A1&family=Gowun+Dodum&family=Gugi&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&display=swap');
+
+
+
+body {
+    background-color: #ffe7c8;
+    width: 75%;
+    margin: auto;
+}
+
+/* 소개 데이터 */
+.myContent {
+    background-color: green;
+    height: 500px;
+    width: 600px;
+}
+
+/* 댓글창 섹션 */
+.comment-section {
+    background-color: blue;
+    height: 200px;
+    width: 600px;
+}
+
+/* 댓글 목록 */ 
+.comments-container {
+    background-color: aqua;
+    height: 300px;
+    width: 1200px;
+}
+
+/* 댓글 입력하는 곳 */
+.comment-div {
+    width: 590px;
+    height: 40px;
+}
+

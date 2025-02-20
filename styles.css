@@ -5,7 +5,7 @@
 
 body {
     margin: 0 auto !important;
-    background-color: rgb(255, 255, 255) !important;
+    background-color: #ffe7c8 !important;
     /* font-family: Arial, sans-serif; */
     position: relative;
 }
@@ -13,7 +13,6 @@ body {
 body::before {
     content: "";
     position: absolute;
-    background-color: #c9c8c8;
     height: 2000px;
     width: 100%;
     z-index: -1;
@@ -231,6 +230,6 @@ h3 {
 }
 
 footer {
-    background-color: #c9c8c8;
+    background-color: #ffd59f;
     height: 200px;
 }
