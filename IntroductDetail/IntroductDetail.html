@@ -10,10 +10,12 @@
 <!-- 소개 데이터 표시 -->
 <div class="myContent">
     <img class="memberImage" id="imge" src="${tb_img}"/>
-    <h1 id="name">로딩 중...</h1>
-    <p id="idx" style="display: none"></p>
-    <p id="age">나이 불러오는 중...</p>
-    <p id="desc">데이터를 불러오는 중...</p>
+    <div class="memberinfo">
+        <h1 id="name">로딩 중...</h1>
+        <p id="idx" style="display: none"></p>
+        <p id="age">나이 불러오는 중...</p>
+        <p id="desc">데이터를 불러오는 중...</p>
+    </div>
 </div>
 
 <!-- 댓글 입력 -->
@@ -25,7 +27,7 @@
 
 <!-- 댓글 목록 -->
 <div class="comments-container">
-    <h2>댓글 목록</h2>
+    <!-- <h2>댓글 목록</h2> -->
     <ul id="commentList">
         <!-- 동적으로 댓글이 추가될 영역 -->
     </ul>
@@ -38,6 +40,9 @@
     <img class="thumbnail" src="../img/정성욱.jpeg" data-detail="IntroductDetail.html?id=3">
     <img class="thumbnail" src="../img/조혁준.JPG" data-detail="IntroductDetail.html?id=4">
 </div>
+<footer>
+
+</footer>
 
 <script src="IntroductDetail.js" type="module"></script> <!-- JavaScript 연결 -->
 </body>

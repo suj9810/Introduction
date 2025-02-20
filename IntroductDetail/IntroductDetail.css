@@ -6,21 +6,52 @@
 
 body {
     background-color: #f0eeee;
-    width: 75%;
+    width: 100%;
     margin: auto;
     border: green 2px solid;
 }
 
 /* 소개 데이터 */
 .myContent {
-    background-color: green;
-    height: 500px;
-    width: 600px;
+    display: flex;
+    flex-direction: row;
+    margin: 180px auto 0px auto;
+    height: 350px;
+    width: 700px;
+}
+
+/* 멤버 상세정보 */
+.memberinfo {
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* 팀원 사진이 나오는 곳 */
+.memberImage {
+    width: 200px;
+    height: 250px;
+    object-fit: cover;
+    margin: auto 0 auto 30px;
+    padding: 10px;
+    border-radius: 5%;
+    border: 2px double rgba(0, 0, 0, .35);
+    outline: 2px double rgba(0, 0, 0, .35);
+    outline-offset: -12px;
+    background-color: white;
 }
 
 /* 댓글창 섹션 */
 .comment-section {
-    background-color: blue;
+    text-align: center;
+    margin: 0 auto;
+    font-family: "Gowun Dodum", serif;
+    font-weight: 700;
+    font-style: normal;
     height: 200px;
     width: 600px;
 }
@@ -28,7 +59,7 @@ body {
 /* 댓글 목록 */ 
 .comments-container {
     display: flex;
-    margin: 0 auto;
+    margin: 50px auto 0 auto;
     justify-content: center;
     background-color: aqua;
     height: 300px;
@@ -39,14 +70,6 @@ body {
 .comment-div {
     width: 590px;
     height: 40px;
-}
-
-/* 팀원 사진이 나오는 곳 */
-.memberImage {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
 }
 
 /* 썸네일 리스트 (초기에는 가로 정렬) */
@@ -90,4 +113,9 @@ body {
     transform: translateY(-5px) scale(1.05) translateZ(0);
     animation: thumbnailBorder 1.5s ease-in-out infinite 0.5s;
     box-shadow: 0 14px 26px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: #c9c8c8;
+    height: 200px;
 }
