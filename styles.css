@@ -5,7 +5,7 @@
 
 body {
     margin: 0 auto !important;
-    background-color: #ffe7c8 !important;
+    background-color: #f0eeee !important;
     /* font-family: Arial, sans-serif; */
     position: relative;
 }
@@ -230,6 +230,6 @@ h3 {
 }
 
 footer {
-    background-color: #ffd59f;
+    background-color: #c9c8c8;
     height: 200px;
 }
