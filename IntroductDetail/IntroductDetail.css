@@ -22,6 +22,7 @@ body {
     margin: 180px auto 0px auto;
     height: 350px;
     width: 700px;
+    box-shadow: 1px 1px 8px rgb(214, 214, 214);
 }
 
 /* 멤버 상세정보 */
@@ -39,6 +40,11 @@ body {
     animation: slide-in-bottom 0.5s ease-in-out;
 }
 
+/*하고싶은 말 글자*/
+.wantSay {
+    margin-top: 120px;
+}
+
 /* 팀원 사진이 나오는 곳 */
 .memberImage {
     width: 200px;
@@ -47,12 +53,12 @@ body {
     margin: auto 0 auto 30px;
     padding: 10px;
     border-radius: 12%;
-    border: 2px double rgba(0, 0, 0, .35);
-    outline: 2px double rgba(0, 0, 0, .35);
+    border: 2px double rgba(49, 40, 40, 0.35);
+    outline: 2px double rgba(117, 115, 115, 0.35);
     outline-offset: -12px;
-    background-color: white;
+    background-color: rgb(231, 229, 229);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .35);
-    animation: slide-in-bottom 0.5s ease-in-out
+    animation: slide-in-bottom 0.5s ease-in-out;
 }
 
 @keyframes topslide {
@@ -69,10 +75,16 @@ body {
     animation: slide-in-bottom 0.5s ease-in-out;
 }
 
+/* 댓글 남기기 글자 */
+.commentTitle {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, .35);
+}
+
 /* 댓글 입력칸 */
 .comment-div {
     background-color: rgb(214, 214, 214);
     border: 1px double slategray;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, .35);
 }
 
 /* 댓글 작성 버튼 */
@@ -80,7 +92,9 @@ body {
     width: 90px;
     height: 40px;
     margin-left:505px;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, .35);
 }
+
 
 /* 댓글 목록 */ 
 .comments-container {
