@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gowun+Dodum&family=Gugi&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Black+Han+Sans&family=Dongle&family=Gasoek+One&family=Gothic+A1&family=Gowun+Dodum&family=Gugi&family=Hi+Melody&family=Jua&family=Nanum+Brush+Script&display=swap');
 
-
+* {
+    font-family: "Gowun Dodum", serif;
+    font-weight: 700;
+    font-style: normal;
+}
 
 body {
     background-color: #f0eeee;
@@ -21,14 +25,18 @@ body {
 }
 
 /* 멤버 상세정보 */
+
+@keyframes slide-in-bottom{
+    0%{transform:translateY(10px);opacity:0}
+    100%{transform:translateY(0);opacity:1}
+}
+
 .memberinfo {
     text-align: center;
     height: 300px;
     width: 300px;
     margin: auto;
-    font-family: "Gowun Dodum", serif;
-    font-weight: 700;
-    font-style: normal;
+    animation: slide-in-bottom 0.5s ease-in-out;
 }
 
 /* 팀원 사진이 나오는 곳 */
@@ -38,32 +46,51 @@ body {
     object-fit: cover;
     margin: auto 0 auto 30px;
     padding: 10px;
-    border-radius: 5%;
+    border-radius: 12%;
     border: 2px double rgba(0, 0, 0, .35);
     outline: 2px double rgba(0, 0, 0, .35);
     outline-offset: -12px;
     background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .35);
+    animation: slide-in-bottom 0.5s ease-in-out
+}
+
+@keyframes topslide {
+    0%{transform:translateY(0)}
+    100%{transform:translateY(-5px)}
 }
 
 /* 댓글창 섹션 */
 .comment-section {
     text-align: center;
     margin: 0 auto;
-    font-family: "Gowun Dodum", serif;
-    font-weight: 700;
-    font-style: normal;
     height: 200px;
     width: 600px;
+    animation: slide-in-bottom 0.5s ease-in-out;
+}
+
+/* 댓글 입력칸 */
+.comment-div {
+    background-color: rgb(214, 214, 214);
+    border: 1px double slategray;
+}
+
+/* 댓글 작성 버튼 */
+.commentBtn {
+    width: 90px;
+    height: 40px;
+    margin-left:505px;
 }
 
 /* 댓글 목록 */ 
 .comments-container {
     display: flex;
-    margin: 50px auto 0 auto;
+    margin: 10px auto 0 auto;
     justify-content: center;
-    background-color: aqua;
-    height: 300px;
+    height: 280px;
     width: 1200px;
+    letter-spacing: 1px;
+    animation: slide-in-bottom 0.5s ease-in-out;
 }
 
 /* 댓글 입력하는 곳 */
@@ -74,7 +101,7 @@ body {
 
 /* 썸네일 리스트 (초기에는 가로 정렬) */
 .thumbnail-container {
-    margin-top: 150px;
+    margin-top: 30px;
     height: 300px;
     display: flex;
     gap: 40px;
